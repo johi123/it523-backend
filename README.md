@@ -26,6 +26,13 @@ The Polygon API (Stock API) only allows us to create 5 API requests per limit wi
 * dateTo: Date\
   _EXAMPLE: 2022-12-12_
 
+### Response
+The response is a normal JSON object with the following 3 keys:
+* matchData: is an array of objects with all the matches in the time span
+* stockData: is an object with 2 keys:
+  * team: contains an array of the stock data for each day in the time span of the team
+  * market: contains an array of the stock data for each day in the time span of the market
+
 ## Example Request
 localhost:4002/api/stocks?dateFrom=2022-12-01&dateTo=2023-01-05
 
