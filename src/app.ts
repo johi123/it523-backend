@@ -2,6 +2,7 @@ import * as express from "express";
 import * as httpLogger from "morgan";
 import * as bodyParser from "body-parser";
 import * as http from "http";
+import * as cors from 'cors';
 import helmet from "helmet";
 
 import { Container } from "typedi";
@@ -26,7 +27,9 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(httpLogger("tiny", { stream: logger.stream() }));
-
+app.use(cors({
+origin: ['https://fh.jlehner.com', 'http://fh.jlehner.com/', 'https://localhost', 'http://localhost'],
+}));
 /**
  * ROUTE IMPORTS
  */
